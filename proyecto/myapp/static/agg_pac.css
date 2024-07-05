@@ -1,0 +1,556 @@
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+  
+   background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+  
+  a:hover {
+    color: indianred;
+  }
+  
+  /*HEADER*/
+  
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 0 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el header */
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .toggle-checkbox {
+    display: none;
+  }
+  
+  .toggle_btn {
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .toggle_btn i {
+    cursor: pointer;
+  }
+  
+  .dropdown_menu {
+    display: none;
+    position: absolute;
+     z-index: 1000;
+    top: 60px;
+    right: 2rem;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    /* Asegura que el menú esté por encima de otros elementos */
+  }
+  
+  .toggle-checkbox:checked ~ .dropdown_menu {
+    display: block;
+  }
+  
+  .dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home_a {
+    color: #000;
+  }
+  
+  .ong_a {
+    color: #000;
+  }
+  
+  .mej_a {
+    color: #000;
+  }
+  
+  .cal_a {
+    color: #000;
+  }
+  
+  .dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #000;
+  }
+  
+  /* Responsivo */
+  
+  @media (max-width: 992px) {
+    .navbar .logo {
+      flex: 1;
+    }
+  
+    .navbar .links,
+    .action_btn {
+      display: none;
+    }
+  
+    .toggle-checkbox:checked ~ .toggle_btn {
+      color: #fff;
+    }
+  
+    .toggle-checkbox:checked ~ .dropdown_menu {
+      display: block;
+    }
+  
+    .dropdown_menu {
+      top: 60px;
+      right: 0;
+      width: 100%;
+    }
+  
+    .dropdown_menu ul {
+      padding: 1rem;
+      position: absolute;
+      z-index: 9999;
+    }
+  
+    .dropdown_menu li {
+      display: block;
+      padding: 0.5rem 0;
+    }
+  
+    /* Adaptar el tamaño del logo */
+    .navbar .logo a {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: center;
+    }
+  
+    .navbar .logo a {
+      font-size: 1rem;
+    }
+  
+    .dropdown_menu {
+      top: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar .logo a {
+      font-size: 0.8rem;
+    }
+  
+    .dropdown_menu {
+      top: 40px;
+    }
+  }
+  
+  
+
+
+
+.titulo {
+    font-size: 80px;
+    color: white;
+}
+
+
+.op_agregar_pac {
+    display: block; 
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    line-height: normal;
+    padding: 20px; 
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.tit1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+ul {
+    padding-left: 20px;
+}
+ul li {
+    margin-bottom: 10px;
+}
+.descripcion strong {
+    color: #000;
+}
+.contacto {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.paciente_mas{
+    width: 50px;
+    height: 50px;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 20px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+    border-top: 1px solid #ddd;
+}
+td:last-child, th:last-child {
+    border-right: none;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+.paciente_mas {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.elm_pac{
+    width: 50px;
+    height: 50px;
+
+}
+
+.ver_pac{
+    width: 50px;
+    height: 50px;
+
+
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header, .modal-body, .modal-footer {
+    padding: 10px;
+}
+.modal-header {
+    border-bottom: 1px solid #ddd;
+}
+.modal-footer {
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+.modal-footer button {
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+.container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    border-left: 150px solid #ddd; /* Added border-left */
+}
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+    border-top: 1px solid #ddd;
+}
+td:last-child, th:last-child {
+    border-right: none;
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr.highlighted td {
+    background-color: #ffcccc; /* Color de fondo rojo claro */
+}
+tr.toDelete td {
+    background-color: #ff9999; /* Color de fondo para eliminar */
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+}
+.paciente_mas {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header, .modal-body, .modal-footer {
+    padding: 10px;
+}
+.modal-header {
+    border-bottom: 1px solid #ddd;
+}
+.modal-footer {
+    border-top: 1px solid #ddd;
+    text-align: right;
+}
+.modal-footer button {
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+#eliminarTexto {
+    color: red;
+    margin-left: 10px;
+    display: none; /* Inicialmente oculto */
+    cursor: pointer;
+}
+
+
+.modal-confirm {
+    /* Estilos existentes */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alineación vertical y horizontal */
+}
+
+
+
+
+
+/* Estilos para el modal de búsqueda de pacientes */
+
+/* Estilo general del modal */
+.modal-buscar {
+    display: none; /* Por defecto, el modal está oculto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    overflow: auto;
+}
+
+/* Contenido del modal */
+.modal-content-buscar {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centra vertical y horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px; /* Ancho máximo del modal */
+}
+
+/* Cabecera del modal */
+.modal-header-buscar {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* Estilo para el botón de cerrar */
+.close-buscar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-buscar:hover,
+.close-buscar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Cuerpo del modal */
+.modal-body-buscar {
+    padding: 10px;
+}
+
+/* Contenedor de la tabla de resultados */
+.table-container-buscar {
+    margin-top: 10px;
+    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+}
+
+/* Estilos para la tabla de resultados */
+#resultadoBusqueda {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#resultadoBusqueda th, 
+#resultadoBusqueda td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#resultadoBusqueda th {
+    background-color: #f2f2f2;
+}
+
+

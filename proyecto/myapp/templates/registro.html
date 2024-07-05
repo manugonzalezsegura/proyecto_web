@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'registro_user_css.css' %}">
+    <title>Registro Usuario</title>
+</head>
+<body>
+    <div class="navbar">
+        <a class="home" href="{% url 'inicio' %}">Home</a>
+        <p class="tit1">MedUnity</p>
+    </div>
+
+    <div class="fondo_registro">
+        <form method="POST">
+            {% csrf_token %}
+            <br>
+            <div>
+                <input type="text" required placeholder="Usuario" name="username">
+                <label id="lblnombre" for="nombre">*</label>
+            </div>
+            <br>
+            <div>
+                <input id="email" type="email" required placeholder="Correo" name="email">
+                <label id="lblcorreo" for="email">*</label>
+            </div>
+            <br>
+            <div>
+                <input type="text" placeholder="Teléfono" name="telefono">
+                <label id="lbltelefono" for="telefono">*</label>
+            </div>
+            <br>
+            <div>
+                <input id="contraseña" type="password" required placeholder="Contraseña" name="password1">
+                <label id="lblcontraseña" for="contraseña">*</label>
+            </div>
+            <br>
+            <div>
+                <input id="confirmar_contraseña" type="password" required placeholder="Confirmar Contraseña" name="password2">
+                <label id="lblconfirmar_contraseña" for="confirmar_contraseña">*</label>
+            </div>
+            <br>
+            <div>
+                
+            </div>
+            <br>
+            <input id="sub1" class="boton" type="submit" value="Registrarse">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/* Estilos generales */
+body {
+    height: 100vh;
+    background-color: #000;
+    background-image: url('https://static9.depositphotos.com/1007566/1177/v/450/depositphotos_11771181-stock-illustration-medical-symbol.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Contenedor de mensajes */
+#mensajes {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Estilo para cada mensaje */
+.mensaje {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.mensaje:hover {
+    background-color: #e9e9e9;
+}
+
+/* Estilo para el remitente */
+.mensaje strong {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Estilo para la fecha */
+.fecha {
+    display: block;
+    color: #777;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.navbar {
+    width: auto;
+    height: 10vh; /* Altura relativa */
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.encabezado {
+    text-align: center;
+    background-color: #007bff; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.encabezado h1 {
+    
+    margin: 0;
+    font-size: 2rem; /* Ajusta el tamaño de la fuente */
+    color: #0111ec; /* Cambia el color del texto */
+}
+
+.enlaces {
+    
+    font-size: 3rem; /* Ajusta el tamaño de la fuente */
+    color: #333; /* Color del texto */
+    transition: text-shadow 0.3s ease-in-out; /* Añade una transición suave */
+}
+
+.enlaces:hover {
+    text-shadow: 0 0 10px #1404f3, 0 0 20px #1404f3, 0 0 30px #1404f3, 0 0 40px #1404f3; /* Efecto de brillo */
+}

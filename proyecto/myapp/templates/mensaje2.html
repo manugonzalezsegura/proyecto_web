@@ -1,0 +1,30 @@
+{% load static %}
+<h1>Chat</h1>
+
+<div id="mensajes">
+    {% for mensaje in mensajes %}
+        <div class="mensaje">
+            <strong>{{ mensaje.remitente.username }}:</strong> {{ mensaje.contenido }}
+        </div>
+    {% endfor %}
+</div>
+
+<h2>Enviar Mensaje</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enviar</button>
+</form>
+
+
+
+
+
+<div id="mensajes">
+    {% for mensaje in mensajes %}
+        <div class="mensaje">
+            <strong>{{ mensaje.remitente.username }}:</strong> {{ mensaje.contenido }}
+            <span class="fecha">{{ mensaje.fecha_envio }}</span>
+        </div>
+    {% endfor %}
+</div>

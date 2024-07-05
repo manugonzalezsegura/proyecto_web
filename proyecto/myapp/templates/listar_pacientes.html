@@ -1,0 +1,37 @@
+<!-- listar_pacientes.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Pacientes</title>
+    <!-- Cualquier archivo CSS necesario -->
+</head>
+<body>
+    <h2>Listado de Pacientes</h2>
+    <table class="pacientes">
+        <thead>
+            <tr>
+                <th>Nombre Paciente</th>
+                <th>RUN Paciente</th>
+                <th>Correo Paciente</th>
+                <th>Teléfono Paciente</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for paciente in pacientes %}
+            <tr>
+                <td>{{ paciente.nombre }} {{ paciente.apellido }}</td>
+                <td>{{ paciente.rut }}</td>
+                <td>{{ paciente.email }}</td>
+                <td>{{ paciente.tlf }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No hay pacientes registrados.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

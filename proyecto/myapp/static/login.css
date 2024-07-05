@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  body {
+    height: 100vh;
+
+   background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+  
+  a:hover {
+    color: indianred;
+  }
+  
+  /*HEADER*/
+  
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 0 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el header */
+  }
+  
+  .navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .toggle-checkbox {
+    display: none;
+  }
+  
+  .toggle_btn {
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .toggle_btn i {
+    cursor: pointer;
+  }
+  
+  .dropdown_menu {
+    display: none;
+    position: absolute;
+     z-index: 1000;
+    top: 60px;
+    right: 2rem;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    /* Asegura que el menú esté por encima de otros elementos */
+  }
+  
+  .toggle-checkbox:checked ~ .dropdown_menu {
+    display: block;
+  }
+  
+  .dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home_a {
+    color: #000;
+  }
+  
+  .ong_a {
+    color: #000;
+  }
+  
+  .mej_a {
+    color: #000;
+  }
+  
+  .cal_a {
+    color: #000;
+  }
+  
+  .dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #000;
+  }
+  
+  /* Responsivo */
+  
+  @media (max-width: 992px) {
+    .navbar .logo {
+      flex: 1;
+    }
+  
+    .navbar .links,
+    .action_btn {
+      display: none;
+    }
+  
+    .toggle-checkbox:checked ~ .toggle_btn {
+      color: #fff;
+    }
+  
+    .toggle-checkbox:checked ~ .dropdown_menu {
+      display: block;
+    }
+  
+    .dropdown_menu {
+      top: 60px;
+      right: 0;
+      width: 100%;
+    }
+  
+    .dropdown_menu ul {
+      padding: 1rem;
+      position: absolute;
+      z-index: 9999;
+    }
+  
+    .dropdown_menu li {
+      display: block;
+      padding: 0.5rem 0;
+    }
+  
+    /* Adaptar el tamaño del logo */
+    .navbar .logo a {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      justify-content: center;
+    }
+  
+    .navbar .logo a {
+      font-size: 1rem;
+    }
+  
+    .dropdown_menu {
+      top: 50px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar .logo a {
+      font-size: 0.8rem;
+    }
+  
+    .dropdown_menu {
+      top: 40px;
+    }
+  }
+
+
+  /* Fondo y estilos generales */
+body {
+    
+    font-family: Arial, sans-serif;
+    background-image: url('https://static9.depositphotos.com/1007566/1177/v/450/depositphotos_11771181-stock-illustration-medical-symbol.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Contenedor del formulario */
+.container {
+    background-color: #070707cc; /* Fondo blanco semitransparente */
+    padding: 30px;
+    border-radius: 10px;
+    height: 50%;
+    width: 50%;
+    max-width: 400px; /* Ancho máximo del formulario */
+}
+
+
+/* Título del formulario */
+h1 {
+    
+   font-size: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #0029f8;
+   
+    
+}
+
+/* Estilos para los mensajes */
+p {
+    text-align: center;
+    color: #d9534f; /* Color rojo para mensajes de error */
+}
+
+/* Estilos de los campos de formulario */
+.form-label {
+    color: #333;
+}
+
+.form-control {
+    border-radius: 5px;
+}
+
+/* Botón de envío */
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+#exampleInputEmail1{
+    width: 90%; /* Ancho del input */
+    height: 30px; /* Altura del input */
+    font-size: 1.2rem; /* Tamaño de la fuente */
+}
+
+
+#exampleInputPassword1{
+    width: 90%; /* Ancho del input */
+    height: 30px; /* Altura del input */
+    font-size: 1.2rem; 
+}
+
+#btnlogin{
+    width: 90%; /* Ancho del input */
+    height: 45px; /* Altura del input */
+    font-size: 1.2rem; 
+    position: center;
+}
+#div1{
+    background-color: #070707cc; /* Fondo blanco semitransparente */
+    padding: 100px;
+    border-radius: 40px;
+    height: 80%;
+    width: 80%;
+    max-width: 400px; /* Ancho máximo del formulario */
+}
+

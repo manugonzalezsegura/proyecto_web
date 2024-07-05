@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'carro1.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+    <body>
+        
+        <header>
+
+            <div class="navbar">
+              <div class="logo"><a href="#">Med Unity</a></div>
+              <input type="checkbox" id="menu-toggle" class="toggle-checkbox">
+              <label for="menu-toggle" class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+              </label>
+              <div class="dropdown_menu">
+                <ul>
+                  <li><a class="home_a" href="Home">Home</a></li>
+                  <li><a class="ong_a" href="ongg.html">Ong</a></li>
+                  <li><a class="mej_a" href="pruebaapi.html">Mejores medicos</a></li>
+                  <li><a class="cal_a" href="calendario.html">Calendario</a></li>
+                  <li><a href="Inicio_Sesion.html" class="action_btn">Iniciar sesion</a></li>
+                </ul>
+              </div>
+            </div>
+        
+          </header>
+
+
+
+
+          <h1 class="tit"> Medicamentos</h1>
+
+          <div class="cartas">
+            <a href="#" class="carta" name="actron" data-name="Actron">
+                <img src="https://www.actro.es/sites/g/files/vrxlpx38101/files/2020-10/Actron_lateral_I.png" alt="Imagen 1">
+                <h3>Actron</h3>
+            </a>
+            <a href="#" class="carta" name="amplex" data-name="Amplex" >
+                <img src="https://www.laboratoriochile.cl/wp-content/uploads/2020/03/Amplex_10-160_30C_Teva_HD.jpg" alt="Imagen 2">
+                <h3>Amplex</h3>
+            </a>
+            <a href="#" class="carta" name="doox" data-name="Doox" >
+                <img src="https://www.laboratoriochile.cl/wp-content/uploads/2015/11/Doox_5MG_30C_Teva_HD.jpg" alt="Imagen 3">
+                <h3>Doox</h3>
+            </a>
+            <a href="#" class="carta" name="anfiol"  data-name="Anfiol" >
+                <img src="https://static.salcobrandonline.cl/spree/products/50071/small/2830108_1.jpg?1641329812" alt="Imagen 4">
+                <h3>Anfiol</h3>
+            </a>
+            <a href="#" class="carta" name="pertium" data-name="Pertium" >
+                <img src="https://static.salcobrandonline.cl/spree/products/48280/small/573315.jpg?1641476702" alt="Imagen 5">
+                <h3>Pertium</h3>
+            </a>
+        </div>
+        
+        
+        <div class="cartas">
+            <a href="#" class="carta" name="lobivon" data-name="Lobivon">
+                <img src="https://prixz.com/salud/wp-content/uploads/2020/10/nebivolol.jpg" alt="Imagen 1">
+                <h3>Lobivon</h3>
+            </a>
+            
+            <a href="#" class="carta" name="veozah" data-name="Veozah">
+                <img src="https://ca-times.brightspotcdn.com/dims4/default/5784bea/2147483647/strip/true/crop/6000x4001+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F60%2F7b%2Ffa4ff55a2e9c884da588127112d0%2Fac4363107d3d4c1d8fc476262e4eda47" alt="Imagen 2">
+                <h3>Veozah</h3>
+            </a>
+            
+            <a href="#" class="carta" name="frenadol" data-name="Frenadol">
+                <img src="https://www.frenadol.es/sites/frenadol_es/files/styles/product_image/public/frenadolpackshot_forte.png" alt="Imagen 3">
+                <h3>Frenadol</h3>
+            </a>
+            
+            <a href="#" class="carta" name="dotron" data-name="Dotron">
+                <img src="https://laboratoriosfarma.com/wp-content/uploads/2021/04/Dotron-Caps-1.png" alt="Imagen 4">
+                <h3>Dotron</h3>
+            </a>
+            
+            <a href="#" class="carta" name="femmetra" data-name="Femmetra">
+                <img src="https://laboratoriosfarma.com/wp-content/uploads/2021/11/FOTO-EST-FEMMEXTRA-CAP-x10-HD.png" alt="Imagen 5">
+                <h3>Femmetra</h3>
+            </a>
+        </div>
+        
+
+    
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const cartas = document.querySelectorAll('.carta');
+    
+                cartas.forEach(carta => {
+                    carta.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        const nombreCarta = carta.getAttribute('data-name');
+                        enviarNombreABaseDeDatos(nombreCarta);
+                    });
+                });
+    
+                function enviarNombreABaseDeDatos(nombre) {
+                    fetch('/guardar-nombre-medicamento/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrftoken')
+                        },
+                        body: JSON.stringify({ nombre_medicamento: nombre })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Hubo un problema al enviar el nombre a la base de datos.');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log('Nombre enviado exitosamente:', data);
+                    })
+                    .catch(error => {
+                        console.error('Error al enviar nombre a la base de datos:', error);
+                    });
+                }
+    
+                function getCookie(name) {
+                    let cookieValue = null;
+                    if (document.cookie && document.cookie !== '') {
+                        const cookies = document.cookie.split(';');
+                        for (let i = 0; i < cookies.length; i++) {
+                            const cookie = cookies[i].trim();
+                            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                break;
+                            }
+                        }
+                    }
+                    return cookieValue;
+                }
+            });
+        </script>
+
+
+
+
+
+
+
+    </body>
+</html>

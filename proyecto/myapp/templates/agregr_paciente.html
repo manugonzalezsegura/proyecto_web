@@ -1,0 +1,154 @@
+{% load static %}
+    
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'agg_pac.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Pacientes</title>
+</head>
+<body>
+
+
+
+
+
+    
+    <header>
+        <div class="encabezado">
+            <nav class="nav-enlaces">
+                
+                <a href="{% url 'inicio' %}" class="enlaces">Home</a>
+                <a href="{% url 'recibidos' %}" class="enlaces">Mensajes Recibidos</a>
+                
+            </nav>
+            <h1 class="titulo">MedUnity</h1>
+        </div>
+    </header>
+
+    <h2>Listado de Pacientes</h2>
+    <form method="POST" action="{% url 'addPaciente' %}">
+        {% csrf_token %}
+        <table class="pacientes">
+            <thead>
+                <tr>
+                    <th>Seleccionar</th>
+                    <th>RUN Paciente</th>
+                    <th>Nombre Paciente</th>
+                    <th>Apellido Paciente</th>
+                    <th>Correo Paciente</th>
+                    <th>Teléfono Paciente</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for paciente in pacientes %}
+                <tr>
+                    <td><input type="checkbox" name="paciente_ids" value="{{ paciente.rut }}"></td>
+                    <td>{{ paciente.rut }}</td>
+                    <td>{{ paciente.nombre }}</td>
+                    <td>{{ paciente.apellido }}</td>
+                    <td>{{ paciente.email }}</td>
+                    <td>{{ paciente.fono }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6">No hay pacientes registrados.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit" name="delete_paciente">Eliminar Pacientes Seleccionados</button>
+    </form>
+
+    <button id="openModalBtn">Nuevo Paciente</button>
+   
+    <!-- Modal para Paciente -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <form id="modalForm" method="POST" action="{% url 'addPaciente' %}">
+                    {% csrf_token %}
+                    <label for="nombres">Nombres:</label><br>
+                    <input type="text" id="nombres" name="nombre" required><br><br>
+                    <label for="apellidos">Apellidos:</label><br>
+                    <input type="text" id="apellidos" name="apellido" required><br><br>
+                    <label for="run">RUN:</label><br>
+                    <input type="text" id="run" name="rut" required><br><br>
+                    <label for="correo">Correo:</label><br>
+                    <input type="email" id="correo" name="email" required><br><br>
+                    <label for="telefono">Teléfono:</label><br>
+                    <input type="tel" id="telefono" name="tlf" required><br>
+                    <div class="modal-footer">
+                        <button type="button" class="close">Cancelar</button>
+                        <button type="submit">Agregar Paciente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button id="openMessageModalBtn">Enviar Mensaje</button>
+
+    <!-- Modal para Mensaje -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="closeMessage">&times;</span>
+            <div class="modal-body">
+                <form method="POST" action="{% url 'addPaciente' %}">
+                    {% csrf_token %}
+                    {{ form_mensaje.as_p }}
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript para manejar los modales
+        var modal = document.getElementById("myModal");
+        var openModalBtn = document.getElementById("openModalBtn");
+        var closeModalBtns = document.getElementsByClassName("close");
+
+        openModalBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        for (var i = 0; i < closeModalBtns.length; i++) {
+            closeModalBtns[i].onclick = function() {
+                modal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var messageModal = document.getElementById("messageModal");
+        var openMessageModalBtn = document.getElementById("openMessageModalBtn");
+        var closeMessageModalBtns = document.getElementsByClassName("closeMessage");
+
+        openMessageModalBtn.onclick = function() {
+            messageModal.style.display = "block";
+        }
+
+        for (var i = 0; i < closeMessageModalBtns.length; i++) {
+            closeMessageModalBtns[i].onclick = function() {
+                messageModal.style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target == messageModal) {
+                messageModal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

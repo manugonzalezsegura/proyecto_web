@@ -1,0 +1,471 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  background-image: url('https://static9.depositphotos.com/1007566/1177/v/450/depositphotos_11771181-stock-illustration-medical-symbol.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: indianred;
+}
+
+/*HEADER*/
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el header */
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3439db; /* Cambia esto al color que desees */
+  background-image: url('ruta/a/tu/imagen.jpg'); /* Opcional: agrega una imagen de fondo */
+  background-size: cover; /* Ajusta la imagen de fondo para cubrir todo el navbar */
+  background-position: center; /* Centra la imagen de fondo */
+  background-repeat: no-repeat; 
+  
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle_btn {
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.toggle_btn i {
+  cursor: pointer;
+}
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+   z-index: 1000;
+  top: 60px;
+  right: 2rem;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  
+}
+
+.toggle-checkbox:checked ~ .dropdown_menu {
+  display: block;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_a {
+  color: #000;
+}
+
+.ong_a {
+  color: #000;
+}
+
+.mej_a {
+  color: #000;
+}
+
+.cal_a {
+  color: #000;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+
+/* Responsivo */
+
+@media (max-width: 992px) {
+  .navbar .logo {
+    flex: 1;
+  }
+
+  .navbar .links,
+  .action_btn {
+    display: none;
+  }
+
+  .toggle-checkbox:checked ~ .toggle_btn {
+    color: #fff;
+  }
+
+  .toggle-checkbox:checked ~ .dropdown_menu {
+    display: block;
+  }
+
+  .dropdown_menu {
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  .dropdown_menu ul {
+    padding: 1rem;
+    position: absolute;
+    z-index: 9999;
+  }
+
+  .dropdown_menu li {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  /* Adaptar el tamaño del logo */
+  .navbar .logo a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar .logo a {
+    font-size: 1rem;
+  }
+
+  .dropdown_menu {
+    top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo a {
+    font-size: 0.8rem;
+  }
+
+  .dropdown_menu {
+    top: 40px;
+  }
+}
+
+.titulo {
+  color: #000;
+  text-align: center;
+}
+
+.Descripcion {
+  width: 600px;
+  height: 250px;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+}
+
+.hospita {
+  height: 50px;
+  width: 50px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+}
+
+/* Estilos para el carrusel */
+#carouselExample {
+  max-width: 500px;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+}
+
+.carousel-item img {
+  max-width: 400px;
+  max-height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+input {
+  display: inline-block;
+  padding: 15px 30px;
+  color: greenyellow;
+  letter-spacing: 4px;
+  font-size: 15px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+input:hover {
+  background: aqua;
+  box-shadow: 0 0 10px #04dff3, 0 0 9px #04dff3, 0 0 10px #04dff3;
+  transition-delay: 0.3s;
+}
+
+/* Añadir margen superior al contenido principal */
+.main-content {
+  padding-top: 80px; /* Ajustar según la altura del header */
+}
+
+.navbar-nav{
+
+  background-color: #000;
+  
+}
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  height: 100vh;
+
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: indianred;
+}
+
+/*HEADER*/
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el header */
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle_btn {
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.toggle_btn i {
+  cursor: pointer;
+}
+
+.dropdown_menu {
+  display: none;
+  position: absolute;
+   z-index: 1000;
+  top: 60px;
+  right: 2rem;
+  width: 200px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.toggle-checkbox:checked ~ .dropdown_menu {
+  display: block;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_a {
+  color: #000;
+}
+
+.ong_a {
+  color: #000;
+}
+
+.mej_a {
+  color: #000;
+}
+
+.cal_a {
+  color: #000;
+}
+
+.dropdown_menu .action_btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
+
+/* Responsivo */
+
+@media (max-width: 992px) {
+  .navbar .logo {
+    flex: 1;
+  }
+
+  .navbar .links,
+  .action_btn {
+    display: none;
+  }
+
+  .toggle-checkbox:checked ~ .toggle_btn {
+    color: #fff;
+  }
+
+  .toggle-checkbox:checked ~ .dropdown_menu {
+    display: block;
+  }
+
+  .dropdown_menu {
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  .dropdown_menu ul {
+    padding: 1rem;
+    position: absolute;
+    z-index: 9999;
+  }
+
+  .dropdown_menu li {
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  /* Adaptar el tamaño del logo */
+  .navbar .logo a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar .logo a {
+    font-size: 1rem;
+  }
+
+  .dropdown_menu {
+    top: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo a {
+    font-size: 0.8rem;
+  }
+
+  .dropdown_menu {
+    top: 40px;
+  }
+}
+
